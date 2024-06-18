@@ -1,0 +1,10 @@
+SELECT 
+    p.ProductName,         -- Имя продукта из таблицы Products
+    pc.CategoryName        -- Имя категории из таблицы ProductCategories
+FROM 
+    Products p             -- Таблица продуктов
+LEFT JOIN 
+    ProductCategoryMapping pcm ON p.ProductID = pcm.ProductID  -- Соединяем таблицу продуктов с таблицей маппинга по ProductID
+LEFT JOIN 
+    ProductCategories pc ON pcm.CategoryID = pc.CategoryID     -- Соединяем таблицу маппинга с таблицей категорий по CategoryID
+;
